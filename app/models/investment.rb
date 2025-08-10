@@ -1,7 +1,9 @@
 class Investment < ApplicationRecord
+  belongs_to :user
+  
   def total_invested
-    Investment.where('month <= ? AND month > 0', month).sum(:actual) +
-      Investment.where('month <= ? AND month > 0', month).sum(:dividend)
+    user.investments.where('month <= ? AND month > 0', month).sum(:actual) +
+      user.investments.where('month <= ? AND month > 0', month).sum(:dividend)
   end
 
   def balance
