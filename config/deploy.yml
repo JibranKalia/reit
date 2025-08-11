@@ -8,7 +8,9 @@ servers:
 
 proxy:
   ssl: true
-  host: reit.jibrankalia.com
+  hosts:
+    - reit.jibrankalia.com
+    - invest.jibrankalia.com
 
 registry:
   username: jibrankalia
